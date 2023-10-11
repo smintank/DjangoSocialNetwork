@@ -1,0 +1,5 @@
+IP: 130.193.55.184;
+name_taski: https://smfamilytasks.sytes.net;
+name_kittygram: https://kittygram-pro.ru;
+login: admin;
+password: practicum1029; 
