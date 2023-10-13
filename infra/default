@@ -16,23 +16,23 @@ server {
     }
 
 
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/smfamilytasks.sytes.net/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/smfamilytasks.sytes.net/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/smfamilytasks.sytes.net/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/smfamilytasks.sytes.net/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
 }
 server {
     if ($host = smfamilytasks.sytes.net) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
+    }
 
 
 
     listen 80;
     server_name 130.193.55.184 smfamilytasks.sytes.net;
-    return 404; # managed by Certbot
+    return 404;
 
 
 }
@@ -60,11 +60,11 @@ server {
         try_files $uri /index.html;
     }
 
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/kittygram-pro.ru/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/kittygram-pro.ru/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/kittygram-pro.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/kittygram-pro.ru/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
 }
 
@@ -72,12 +72,9 @@ server {
 server {
     if ($host = kittygram-pro.ru) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
-
+    }
 
     listen 80;
     server_name kittygram-pro.ru;
-    return 404; # managed by Certbot
-
-
+    return 404;
 }
